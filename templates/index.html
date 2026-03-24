@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TURMA H - PDF Converter</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <!-- Navigation -->
+  <nav class="navbar">
+    <div class="nav-container">
+      <div class="logo">
+        <span class="logo-icon">📄</span>
+        <span class="logo-text">TURMA H</span>
+      </div>
+      <div class="tagline">PDF Converter Pro</div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-content">
+      <h1 class="hero-title">Converta PPTX para PDF<br><span class="highlight">Instantaneamente</span></h1>
+      <p class="hero-subtitle">A forma mais rápida e fácil de converter suas apresentações</p>
+    </div>
+  </section>
+
+  <!-- Main Content -->
+  <main class="container">
+    <div class="converter-card">
+      <!-- Upload Section -->
+      <div class="upload-wrapper">
+        <div class="upload-area" id="uploadArea">
+          <div class="upload-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+              <polyline points="17 8 12 3 7 8"></polyline>
+              <line x1="12" y1="3" x2="12" y2="15"></line>
+            </svg>
+          </div>
+          <h2>Arraste seu arquivo aqui</h2>
+          <p>ou <button class="link-btn" id="selectBtn">clique para selecionar</button></p>
+          <input type="file" id="fileInput" name="file" accept=".pptx" hidden>
+        </div>
+
+        <!-- Selected File Info -->
+        <div class="file-selected" id="fileSelected" style="display: none;">
+          <div class="file-header">
+            <span class="file-icon">📊</span>
+            <div class="file-info">
+              <h3 id="fileName">arquivo.pptx</h3>
+              <p id="fileSize">0 KB</p>
+            </div>
+            <button class="btn-reset-file" id="resetFileBtn">✕</button>
+          </div>
+        </div>
+
+        <!-- Progress Bar -->
+        <div class="progress-section" id="progressSection" style="display: none;">
+          <div class="progress-bar">
+            <div class="progress-fill" id="progressFill"></div>
+          </div>
+          <p class="progress-text" id="progressText">Preparando arquivo...</p>
+        </div>
+
+        <!-- Status Message -->
+        <div class="status-message" id="statusMessage" style="display: none;"></div>
+
+        <!-- Action Buttons -->
+        <div class="button-group">
+          <button class="btn btn-primary" id="convertBtn" style="display: none;">
+            <span class="btn-icon">⚡</span>
+            Converter agora
+          </button>
+          <button class="btn btn-success" id="downloadBtn" style="display: none;">
+            <span class="btn-icon">↓</span>
+            Baixar PDF
+          </button>
+          <button class="btn btn-secondary" id="newBtn" style="display: none;">
+            <span class="btn-icon">+</span>
+            Novo arquivo
+          </button>
+        </div>
+      </div>
+
+      <!-- Info Cards -->
+      <div class="info-grid">
+        <div class="info-card">
+          <div class="card-icon">⚡</div>
+          <h4>Ultra Rápido</h4>
+          <p>Conversão em segundos</p>
+        </div>
+        <div class="info-card">
+          <div class="card-icon">🔒</div>
+          <h4>100% Seguro</h4>
+          <p>Nenhum dado é salvo</p>
+        </div>
+        <div class="info-card">
+          <div class="card-icon">📱</div>
+          <h4>Responsivo</h4>
+          <p>Funciona em qualquer dispositivo</p>
+        </div>
+        <div class="info-card">
+          <div class="card-icon">∞</div>
+          <h4>Ilimitado</h4>
+          <p>Converta quantos quiser</p>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <p>&copy; 2026 TURMA H PDF Converter. Todos os direitos reservados.</p>
+  </footer>
+
+  <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
